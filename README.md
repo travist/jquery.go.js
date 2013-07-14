@@ -1,17 +1,19 @@
-jQuery GO! - An Node.js Testing and Automation tool using the jQuery Interface.
-------------------------------------------------------------------------------
+jQuery.go.js
+==============
+
+_A Node.js Testing and Automation tool using the jQuery Interface._
 An easy-to-use web testing and automation tool that uses the jQuery interface 
 within Node.js to interact with the Phantom.js browser.
 
 Node.js + Phantom.js + jQuery = AwesomeSauce!
-==============================================
+---------------------------------------------
 What do you get when you combine three of the most exciting JavaScript 
 technologies into a single package.  AwesomeSauce that's what.  Actually, what
 you get is an easy to use browser testing and automation tool by utilizing the
 jQuery interface within Node.js to interact with the Phantom.js browser.
 
 Another jQuery wrapper in Node.js?...
-==============================================
+---------------------------------------------
 Yes... but not really... Obviously, there are other technologies that wrap
 the jQuery library within a Node.js environment, but this library is different.
 
@@ -24,7 +26,7 @@ to jQuery within Phantom.js, but there are also some other methods exposed to
 help with the task of testing and automation.
 
 The API
-=================
+---------------------------------------------
 
 Every thing within jQuery (for the most part) is exposed to this library, but 
 done so asynchronously.  For example, to get the text of an element on the page,
@@ -95,7 +97,7 @@ That is pretty much what you need to know regarding differences between jQuery
 interface compared to what you are used to.
 
 Additional API's
-==================
+---------------------------------------------
 
 There are also some added API's that make your testing and automation easier.
 They are as follows.
