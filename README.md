@@ -1,14 +1,14 @@
-jQuery.go.js
+jquery.go.js
 ==============
 An easy-to-use web testing and automation tool that uses the jQuery interface 
-within Node.js to interact with the Phantom.js browser.
+within Node.js to interact with the <a href="http://phantomjs.org">Phantom.js</a> browser.
 
-Node.js + Phantom.js + jQuery = AwesomeSauce!
+Node.js + <a href="http://phantomjs.org">Phantom.js</a> + jQuery = AwesomeSauce!
 ---------------------------------------------
 What do you get when you combine three of the most exciting JavaScript 
 technologies into a single package.  AwesomeSauce that's what.  Actually, what
 you get is an easy to use browser testing and automation tool by utilizing the
-jQuery interface within Node.js to interact with the Phantom.js browser.
+jQuery interface within Node.js to interact with the <a href="http://phantomjs.org">Phantom.js</a> browser.
 
 Another jQuery wrapper in Node.js?...
 ---------------------------------------------
@@ -16,11 +16,11 @@ Yes... but not really... Obviously, there are other technologies that wrap
 the jQuery library within a Node.js environment, but this library is different.
 
 For one, this library is not a complete API mirror of jQuery.  Every API
-is asynchronous (due to its interaction with Phantom.js), so there are some
+is asynchronous (due to its interaction with <a href="http://phantomjs.org">Phantom.js</a>), so there are some
 differences.  Because of this, I would rather think of this library as a tool
 for testing and automation, but just uses the familar jQuery API to do so. 
 Technically speaking, it accomplishes this by simply passing along your commands
-to jQuery within Phantom.js, but there are also some other methods exposed to 
+to jQuery within <a href="http://phantomjs.org">Phantom.js</a>, but there are also some other methods exposed to 
 help with the task of testing and automation.
 
 The API
@@ -134,7 +134,7 @@ $.visit('/user', function() {
 ```
 
 - close: function()
-  Closes the Phantom.js browser.
+  Closes the <a href="http://phantomjs.org">Phantom.js</a> browser.
 
 - config: object
   An object of configurations for this library.
