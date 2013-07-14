@@ -1,0 +1,24 @@
+{
+  "name": "jquerygo",
+  "version": "0.0.1",
+  "description": "A node.js package to test and automate the web using jQuery with PhantomJS.",
+  "author": {
+    "name": "Travis Tidwell",
+    "email": "travist349@gmail.com",
+    "url": "http://github.com/travist"
+  },
+  "homepage": "http://github.com/travist/jquery.go.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/travist/jquery.go.js.git"
+  },
+  "bugs": {
+    "url": "http://github.com/travist/jquery.go.js/issues"
+  },
+  "main": "./lib/jquery.go.js",
+  "engines": { "node": ">0" },
+  "dependencies": {
+    "node-phantom": ">=0",
+    "underscore": ">=0"
+  }
+}
