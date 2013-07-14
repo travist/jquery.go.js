@@ -1,7 +1,7 @@
 jQuery GO! - An Node.js Testing and Automation tool using the jQuery Interface.
 ------------------------------------------------------------------------------
-This library is an easy-to-use web testing and automation tool by utilizing the
-jQuery interface within Node.js to interact with the Phantom.js browser.
+An easy-to-use web testing and automation tool that uses the jQuery interface 
+within Node.js to interact with the Phantom.js browser.
 
 Node.js + Phantom.js + jQuery = AwesomeSauce!
 ==============================================
