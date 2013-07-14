@@ -140,12 +140,9 @@ $.visit('/user', function() {
   
   An object of configurations for this library.
 
-  - site: (string, default='') 
-    - A base url for the site so that all other 'visit' calls could be relative.
-  - addJQuery: (boolean, default=TRUE) 
-    - TRUE if you need to add jQuery to the page you are visiting, FALSE if the page already adds jQuery.
-  - jQuery: (string, default='http://code.jquery.com/jquery-1.9.1.min.js') 
-    - The CDN url of the jQuery to add to the page if addJQuery is set to TRUE.
+  - site: (string, default='') - A base url for the site so that all other 'visit' calls could be relative.
+  - addJQuery: (boolean, default=TRUE) - TRUE if you need to add jQuery to the page you are visiting, FALSE if the page already adds jQuery.
+  - jQuery: (string, default='http://code.jquery.com/jquery-1.9.1.min.js') - The CDN url of the jQuery to add to the page if addJQuery is set to TRUE.
 
 ```
 
