@@ -98,7 +98,7 @@ Additional API's
 There are also some added API's that make your testing and automation easier.
 They are as follows.
 
-- visit: function(url, callback)
+- <strong>visit</strong>: function(url, callback)
 
   Visit a webpage.
     - url:  The url you wish to visit.
@@ -112,7 +112,7 @@ $.visit('http://localhost;8888', function() {
 });
 ```
 
-- waitForPage: function(callback)
+- <strong>waitForPage</strong>: function(callback)
   
   Wait for a page to load.  Usefull after you press Submit on a form.
     - callback: Called when the page is done loading.
@@ -132,11 +132,11 @@ $.visit('/user', function() {
 });
 ```
 
-- close: function()
+- <strong>close</strong>: function()
   
   Closes the <a href="http://phantomjs.org">Phantom.js</a> browser.
 
-- config: object
+- <strong>config</strong>: object
   
   An object of configurations for this library.
 
