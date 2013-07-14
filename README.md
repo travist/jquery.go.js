@@ -25,7 +25,6 @@ help with the task of testing and automation.
 
 The API
 ---------------------------------------------
-
 Every thing within jQuery (for the most part) is exposed to this library, but 
 done so asynchronously.  For example, to get the text of an element on the page,
 you would use the following code.
@@ -96,7 +95,6 @@ interface compared to what you are used to.
 
 Additional API's
 ---------------------------------------------
-
 There are also some added API's that make your testing and automation easier.
 They are as follows.
 
@@ -115,6 +113,7 @@ $.visit('http://localhost;8888', function() {
 ```
 
 - waitForPage: function(callback)
+  
   Wait for a page to load.  Usefull after you press Submit on a form.
     - callback: Called when the page is done loading.
 
@@ -134,17 +133,22 @@ $.visit('/user', function() {
 ```
 
 - close: function()
+  
   Closes the <a href="http://phantomjs.org">Phantom.js</a> browser.
 
 - config: object
+  
   An object of configurations for this library.
 
   - site: (string, default='') 
-      A base url for the site so that all other 'visit' calls could be relative.
+      
+    A base url for the site so that all other 'visit' calls could be relative.
   - addJQuery: (boolean, default=TRUE) 
-      TRUE if you need to add jQuery to the page you are visiting, FALSE if the page already adds jQuery.
+      
+    TRUE if you need to add jQuery to the page you are visiting, FALSE if the page already adds jQuery.
   - jQuery: (string, default='http://code.jquery.com/jquery-1.9.1.min.js') 
-      The CDN url of the jQuery to add to the page if addJQuery is set to TRUE.
+      
+    The CDN url of the jQuery to add to the page if addJQuery is set to TRUE.
 
 ```
 
