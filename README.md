@@ -1,7 +1,5 @@
 jQuery.go.js
 ==============
-
-_A Node.js Testing and Automation tool using the jQuery Interface._
 An easy-to-use web testing and automation tool that uses the jQuery interface 
 within Node.js to interact with the Phantom.js browser.
 
