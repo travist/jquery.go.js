@@ -166,3 +166,45 @@ $.visit('/user', function() {
 });
 
 ```
+
+jQuery.go - Using this library with <a href="https://github.com/caolan/async">Async.js</a>
+==========================
+This library is called jQuery.go for a reason.  It is because there is a special
+method that is used to interact with the <a href="https://github.com/caolan/async">Async.js</a> library
+that provides an easy way to provide a serial looking interface when building your
+tests.  This can work with the Async.js library by calling the <strong>go</strong> method and
+whatever functions you wish to call after that as arguments to that method.
+
+A great example is to take the previous example shown above and rewrite it using <strong>jQuery.go</strong>
+method.
+
+```
+var async = require('async');
+var $ = require('../lib/jquery.go.js');
+
+// Add some default configs.
+$.config.site = 'http://localhost:8888';
+$.config.addJQuery = false;
+
+// Using the async.series with jQuery.go.
+async.series([
+  $.go('visit', '/user'),
+  $('#edit-name').go('val', 'admin'),
+  $('#edit-pass').go('val', '123testing'),
+  $('#edit-submit').go('click'),
+  $.go('waitForPage'),
+  function(done) {
+
+    // Make sure that the logout link is shown.
+    $('a[href="/user/logout"]').text(function(text) {
+      console.log(text);
+      done();
+    }); 
+  }
+], function() {
+  console.log('You are logged in!');
+  $.close();
+});
+```
+
+This makes it so that you do not fall into Callback hell when developing your automation and tests.
