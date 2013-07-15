@@ -26,6 +26,16 @@ help with the task of testing and automation.
 In particular is a method called <a href="https://github.com/travist/jquery.go.js#jquerygo---using-this-library-with-asyncjs">jquery.go</a> that
 allows this library to be used with the <a href="https://github.com/caolan/async">Async.js</a> library.
 
+Installation
+---------------------------------------------
+- Obviously you need to install <a href="http://nodejs.org">Node.js</a> to use this.
+- Next, you will need to install <a href="http://phantomjs.org">Phantom.js</a>.
+- You can now use this library using the NPM package <strong>jquerygo</strong>
+
+```
+npm install jquerygo
+```
+
 The API
 ---------------------------------------------
 Every thing within jQuery (for the most part) is exposed to this library, but 
