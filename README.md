@@ -168,7 +168,7 @@ $.visit('/user', function() {
 ```
 
 jQuery.go - Using this library with <a href="https://github.com/caolan/async">Async.js</a>
-==========================
+---------------------------------------------
 This library is called jQuery.go for a reason.  It is because there is a special
 method that is used to interact with the <a href="https://github.com/caolan/async">Async.js</a> library
 that provides an easy way to provide a serial looking interface when building your
