@@ -16,7 +16,7 @@ async.series([
     $('a[href="/user/logout"]').text(function(text) {
       console.log(text);
       done();
-    }); 
+    });
   }
 ], function() {
   console.log('You are logged in!');

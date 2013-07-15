@@ -20,6 +20,7 @@
   "dependencies": {
     "node-phantom": ">=0",
     "underscore": ">=0",
-    "async": ">=0"
+    "async": ">=0",
+    "asyncgo": ">=0"
   }
 }
