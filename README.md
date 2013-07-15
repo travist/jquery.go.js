@@ -23,7 +23,7 @@ Technically speaking, it accomplishes this by simply passing along your commands
 to jQuery within <a href="http://phantomjs.org">Phantom.js</a>, but there are also some other methods exposed to 
 help with the task of testing and automation.
 
-Another major difference is that with these additions comes a method called <a href="https://github.com/travist/jquery.go.js#jquerygo---using-this-library-with-asyncjs">jquery.go</a> that
+In particular is a method called <a href="https://github.com/travist/jquery.go.js#jquerygo---using-this-library-with-asyncjs">jquery.go</a> that
 allows this library to be used with the <a href="https://github.com/caolan/async">Async.js</a> library.
 
 The API
