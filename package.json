@@ -16,7 +16,6 @@
     "url": "http://github.com/travist/jquery.go.js/issues"
   },
   "main": "./lib/jquery.go.js",
-  "engines": { "node": ">0" },
   "dependencies": {
     "node-phantom": ">=0",
     "underscore": ">=0",
