@@ -1,11 +1,11 @@
 jquery.go.js
 ==============
-An easy-to-use web testing and automation tool that uses the jQuery interface 
+An easy-to-use web testing and automation tool that uses the jQuery interface
 within Node.js to interact with the <a href="http://phantomjs.org">Phantom.js</a> browser.
 
 Node.js + <a href="http://phantomjs.org">Phantom.js</a> + jQuery = AwesomeSauce!
 ---------------------------------------------
-What do you get when you combine three of the most exciting JavaScript 
+What do you get when you combine three of the most exciting JavaScript
 technologies into a single package.  AwesomeSauce that's what.  Actually, what
 you get is an easy to use browser testing and automation tool by utilizing the
 jQuery interface within Node.js to interact with the <a href="http://phantomjs.org">Phantom.js</a> browser.
@@ -18,9 +18,9 @@ the jQuery library within a Node.js environment, but this library is different.
 For one, this library is not a complete API mirror of jQuery.  Every API
 is asynchronous (due to its interaction with <a href="http://phantomjs.org">Phantom.js</a>), so there are some
 differences.  Because of this, I would rather think of this library as a tool
-for testing and automation, but just uses the familar jQuery API to do so. 
+for testing and automation, but just uses the familar jQuery API to do so.
 Technically speaking, it accomplishes this by simply passing along your commands
-to jQuery within <a href="http://phantomjs.org">Phantom.js</a>, but there are also some other methods exposed to 
+to jQuery within <a href="http://phantomjs.org">Phantom.js</a>, but there are also some other methods exposed to
 help with the task of testing and automation.
 
 In particular is a method called <a href="https://github.com/travist/jquery.go.js#jquerygo---using-this-library-with-asyncjs">jquery.go</a> that
@@ -38,7 +38,7 @@ npm install jquerygo
 
 The API
 ---------------------------------------------
-Every thing within jQuery (for the most part) is exposed to this library, but 
+Every thing within jQuery (for the most part) is exposed to this library, but
 done so asynchronously.  For example, to get the text of an element on the page,
 you would use the following code.
 
@@ -47,7 +47,7 @@ var $ = require('jquerygo');
 
 // Visit the user path and log in.
 $.visit('http://localhost:8888/user', function() {
-  
+
   // Get the title.
   $('h1').text(function(text) {
     console.log(text);
@@ -64,7 +64,7 @@ var $ = require('jquerygo');
 
 // Visit the user path and log in.
 $.visit('http://localhost:8888/user', function() {
-  
+
   // Set the title.
   $('h1').text('New Title', function() {
 
@@ -79,7 +79,7 @@ $.visit('http://localhost:8888/user', function() {
 });
 ```
 
-You may have noted that this makes jQuery chaining difficult.  You are right, 
+You may have noted that this makes jQuery chaining difficult.  You are right,
 but you don't need to repeat your jQuery selectors since if you wish to chain,
 you can just use the 'this' keyword in the callbacks to reference the same
 selector.
@@ -89,7 +89,7 @@ var $ = require('jquerygo');
 
 // Visit the user path and log in.
 $.visit('http://localhost:8888/user', function() {
-  
+
   // Set the title.
   $('h1').text('New Title', function() {
 
@@ -103,6 +103,48 @@ $.visit('http://localhost:8888/user', function() {
   });
 });
 ```
+
+The each method
+---------------------------------------------
+This library also supports the ```each``` method, but its signature is a little
+bit different than core jQuery.  The main difference being that it must support
+asynchronous process flow using callback functions.  Here is an example of using
+the each method.
+
+```
+var $ = require('jquerygo');
+
+// Add some default configs.
+$.config.site = 'http://localhost:8888';
+$.config.addJQuery = false;
+
+// Using each method.
+$.visit('/node', function() {
+
+  // Iterate over each 'h2 a' elements.
+  $('h2 a').each(function(index, element, done) {
+
+    // Get the text for the element.
+    this.text(function(text) {
+
+      // Log the text.
+      console.log(text);
+
+      // We MUST call the done() method to say when we are done with this iteration.
+      done();
+    });
+  },
+
+  // This method is called after all the items have been iterated over...
+  function() {
+
+    // Log that we are done and close the browser.
+    console.log('done');
+    $.close();
+  });
+});
+```
+
 That is pretty much what you need to know regarding differences between jQuery
 interface compared to what you are used to.
 
@@ -126,7 +168,7 @@ $.visit('http://localhost;8888', function() {
 ```
 
 - <strong>waitForPage</strong>: function(callback)
-  
+
   Wait for a page to load.  Usefull after you press Submit on a form.
     - callback: Called when the page is done loading.
 
@@ -146,11 +188,11 @@ $.visit('/user', function() {
 ```
 
 - <strong>close</strong>: function()
-  
+
   Closes the <a href="http://phantomjs.org">Phantom.js</a> browser.
 
 - <strong>config</strong>: object
-  
+
   An object of configurations for this library.
 
   - site: (string, default='') - A base url for the site so that all other 'visit' calls could be relative.
@@ -212,7 +254,7 @@ async.series([
     $('a[href="/user/logout"]').text(function(text) {
       console.log(text);
       done();
-    }); 
+    });
   }
 ], function() {
   console.log('You are logged in!');
