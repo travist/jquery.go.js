@@ -148,6 +148,17 @@ $.visit('/node', function() {
 That is pretty much what you need to know regarding differences between jQuery
 interface compared to what you are used to.
 
+Screen Capture
+---------------------------------------------
+This library also allows you to take a screen capture during your testing and
+automation.  This can be done using the ```$.capture``` method. You can also
+use this along with ```__dirname``` to take a screen shot within the directory
+that your automation script resides.
+
+```
+$.capture(__dirname + '/screenshot.png');
+```
+
 Additional API's
 ---------------------------------------------
 There are also some added API's that make your testing and automation easier.
@@ -169,7 +180,7 @@ $.visit('http://localhost;8888', function() {
 
 - <strong>waitForPage</strong>: function(callback)
 
-  Wait for a page to load.  Usefull after you press Submit on a form.
+  Wait for a page to load.  Useful after you press Submit on a form.
     - callback: Called when the page is done loading.
 
 ```
@@ -186,6 +197,14 @@ $.visit('/user', function() {
   });
 });
 ```
+
+- <strong>waitForElement</strong>: function(element, callback)
+
+  Wait for an element to appear on the page.  Useful when you are waiting
+  for an AJAX request to return which sets an element on the page.
+
+    - element:  The element selector that you wish to wait for.
+    - callback: Called when that element is present.
 
 - <strong>close</strong>: function()
 
