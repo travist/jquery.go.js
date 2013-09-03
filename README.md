@@ -29,7 +29,6 @@ allows this library to be used with the <a href="https://github.com/caolan/async
 Installation
 ---------------------------------------------
 - Obviously you need to install <a href="http://nodejs.org">Node.js</a> to use this.
-- Next, you will need to install <a href="http://phantomjs.org">Phantom.js</a>.
 - You can now use this library using the NPM package <strong>jquerygo</strong>
 
 ```

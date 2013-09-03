@@ -20,6 +20,7 @@
     "node-phantom": ">=0",
     "underscore": ">=0",
     "async": ">=0",
-    "asyncgo": ">=0"
+    "asyncgo": ">=0",
+    "phantomjs": "~1.9.1-9"
   }
 }
