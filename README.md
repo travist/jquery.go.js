@@ -205,6 +205,35 @@ $.visit('/user', function() {
     - element:  The element selector that you wish to wait for.
     - callback: Called when that element is present.
 
+- <strong>getPage</strong>: function(callback)
+
+  Return the phantomJS page so that you can perform your own JS execute parameter.
+  
+    - callback:  Called when the page is returned.
+    
+
+```
+var $ = require('../lib/jquery.go.js');
+$.visit('https://www.google.com', function(){
+  $.waitForPage(function(){
+    $.getPage(function(page) {
+      page.evaluate(function(args) {
+      
+        // Just return the passed in params.
+        return args.hello;
+      }, function(err, retVal) {
+      
+        // Called when you return from the evaluation.
+        console.log(retVal);
+        $.close();
+      }, {
+        hello: 'HELLO THERE!!!'
+      });
+    });
+  });
+});
+```  
+
 - <strong>close</strong>: function()
 
   Closes the <a href="http://phantomjs.org">Phantom.js</a> browser.
