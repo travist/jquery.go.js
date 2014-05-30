@@ -2,7 +2,7 @@ var async = require('async');
 var $ = require('../lib/jquery.go.js');
 
 // Add some default configs.
-$.config.site = 'http://localhost:8888';
+$.config.site = 'http://localhost';
 $.config.addJQuery = false;
 
 // Using each method.
