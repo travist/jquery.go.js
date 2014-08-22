@@ -1,6 +1,6 @@
 {
   "name": "jquerygo",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "A node.js package to test and automate the web using jQuery with PhantomJS.",
   "author": {
     "name": "Travis Tidwell",
