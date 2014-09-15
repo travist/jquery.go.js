@@ -111,7 +111,6 @@ asynchronous process flow using callback functions.  Here is an example of using
 the each method.
 
 ```javascript
-var async = require('async');
 var $ = require('jquerygo');
 
 // Add some default configs.
