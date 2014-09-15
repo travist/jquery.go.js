@@ -118,21 +118,27 @@ var $ = require('jquerygo');
 $.config.site = 'http://www.whitehouse.gov';
 $.config.addJQuery = false;
 
-// Using the async.series with jQuery.go.
-async.series([
-  $.go('visit', '/about/presidents'),
-  $.go('waitForPage'),
-  function(done) {
-    $('span.field-content').each(function(index, element, done){
+// Go to the presidents page.
+$.visit('/about/presidents', function() {
+  $.waitForPage(function() {
+  
+    // Iterate through each span.field-content.
+    $('span.field-content').each(function(index, element, done) {
+    
+      // Get the text of this element.
       element.text(function(name) {
+      
+        // Print the presidents name.
         console.log(name);
         done();
       });
-    }, done);
-  }
-], function() {
-  console.log('Presidents loaded!');
-  $.close();
+    }, function() {
+    
+      // We are done.
+      console.log('Presidents loaded!');
+      $.close();
+    });
+  });
 });
 ```
 
