@@ -41,7 +41,7 @@ Every thing within jQuery (for the most part) is exposed to this library, but
 done so asynchronously.  For example, to get the text of an element on the page,
 you would use the following code.
 
-```
+```javascript
 var $ = require('jquerygo');
 
 // Visit the user path and log in.
@@ -58,7 +58,7 @@ $.visit('http://localhost:8888/user', function() {
 To set the text of an element on the page, you still add your arguments after
 text, but just include the callback to know when it is done..
 
-```
+```javascript
 var $ = require('jquerygo');
 
 // Visit the user path and log in.
@@ -83,7 +83,7 @@ but you don't need to repeat your jQuery selectors since if you wish to chain,
 you can just use the 'this' keyword in the callbacks to reference the same
 selector.
 
-```
+```javascript
 var $ = require('jquerygo');
 
 // Visit the user path and log in.
@@ -110,37 +110,29 @@ bit different than core jQuery.  The main difference being that it must support
 asynchronous process flow using callback functions.  Here is an example of using
 the each method.
 
-```
+```javascript
+var async = require('async');
 var $ = require('jquerygo');
 
 // Add some default configs.
-$.config.site = 'http://localhost:8888';
+$.config.site = 'http://www.whitehouse.gov';
 $.config.addJQuery = false;
 
-// Using each method.
-$.visit('/node', function() {
-
-  // Iterate over each 'h2 a' elements.
-  $('h2 a').each(function(index, element, done) {
-
-    // Get the text for the element.
-    this.text(function(text) {
-
-      // Log the text.
-      console.log(text);
-
-      // We MUST call the done() method to say when we are done with this iteration.
-      done();
-    });
-  },
-
-  // This method is called after all the items have been iterated over...
-  function() {
-
-    // Log that we are done and close the browser.
-    console.log('done');
-    $.close();
-  });
+// Using the async.series with jQuery.go.
+async.series([
+  $.go('visit', '/about/presidents'),
+  $.go('waitForPage'),
+  function(done) {
+    $('span.field-content').each(function(index, element, done){
+      element.text(function(name) {
+        console.log(name);
+        done();
+      });
+    }, done);
+  }
+], function() {
+  console.log('Presidents loaded!');
+  $.close();
 });
 ```
 
@@ -154,7 +146,7 @@ automation.  This can be done using the ```$.capture``` method. You can also
 use this along with ```__dirname``` to take a screen shot within the directory
 that your automation script resides.
 
-```
+```javascript
 $.capture(__dirname + '/screenshot.png');
 ```
 
@@ -169,7 +161,7 @@ They are as follows.
     - url:  The url you wish to visit.
     - callback:  Called when you are done visiting that page.
 
-```
+```javascript
 // Visit the user path and log in.
 $.visit('http://localhost;8888', function() {
   console.log('You have visited the page!');
@@ -182,7 +174,7 @@ $.visit('http://localhost;8888', function() {
   Wait for a page to load.  Useful after you press Submit on a form.
     - callback: Called when the page is done loading.
 
-```
+```javascript
 $.visit('/user', function() {
   $('#edit-name').val('admin', function() {
     $('#edit-pass').val('123password', function() {
@@ -212,7 +204,7 @@ $.visit('/user', function() {
     - callback:  Called when the page is returned.
     
 
-```
+```javascript
 var $ = require('../lib/jquery.go.js');
 $.visit('https://www.google.com', function(){
   $.waitForPage(function(){
@@ -246,8 +238,7 @@ $.visit('https://www.google.com', function(){
   - addJQuery: (boolean, default=TRUE) - TRUE if you need to add jQuery to the page you are visiting, FALSE if the page already adds jQuery.
   - jQuery: (string, default='http://code.jquery.com/jquery-1.9.1.min.js') - The CDN url of the jQuery to add to the page if addJQuery is set to TRUE.
 
-```
-
+```javascript
 var $ = require('jquerygo');
 
 // Add some default configs.
@@ -280,7 +271,7 @@ whatever functions you wish to call after that as arguments to that method.
 A great example is to take the previous example shown above and rewrite it using <strong>jQuery.go</strong>
 method.
 
-```
+```javascript
 var async = require('async');
 var $ = require('../lib/jquery.go.js');
 
