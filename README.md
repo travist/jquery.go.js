@@ -241,7 +241,10 @@ $.visit('https://www.google.com', function(){
 
   - site: (string, default='') - A base url for the site so that all other 'visit' calls could be relative.
   - addJQuery: (boolean, default=TRUE) - TRUE if you need to add jQuery to the page you are visiting, FALSE if the page already adds jQuery.
-  - jQuery: (string, default='http://code.jquery.com/jquery-1.9.1.min.js') - The CDN url of the jQuery to add to the page if addJQuery is set to TRUE.
+  - jQuery: (string, default='http://code.jquery.com/jquery-1.11.1.min.js') - The CDN url of the jQuery to add to the page if addJQuery is set to TRUE.
+  - width: (int, default=1920) - The width of the viewport
+  - height: (int, default=1080) - The height of the viewport
+  - userAgent: (string, defaults to phantoms agent) - Set a custom user agent
 
 ```javascript
 var $ = require('jquerygo');
