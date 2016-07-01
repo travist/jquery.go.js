@@ -1,3 +1,6 @@
+THIS MODULE IS NO LONGER BEING MAINTAINED. I would recommend using something like [Casper.js](http://casperjs.org/) instead.
+==============================================
+
 jquery.go.js
 ==============
 An easy-to-use web testing and automation tool that uses the jQuery interface
